@@ -8,6 +8,7 @@ export class SpotifyService{
     private searchUrl: string;
     private artistUrl: string;
     private albumsUrl: string;
+    private albumUrl: string;
 
     private client_id = '';
     private client_secret = '';
@@ -39,4 +40,10 @@ export class SpotifyService{
                 .map(res => res.json());
     }
 
+    getAlbum(albumId:string){
+        this.albumUrl = "https://api.spotify.com/v1/albums/" + albumId ;
+
+        return this._http.get(this.albumUrl)
+                .map(res => res.json());
+    }
 }
