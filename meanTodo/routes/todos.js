@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
 
-var db = mongojs('<mongoConnection>', ['todos']);
+var db = mongojs('mongodb://forge:forge@dbh61.mlab.com:27617/meantodos', ['todos']);
 
 
 // Get ToDos
