@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
 
-var db = mongojs('<<mongodb>>', ['todos']);
+var db = mongojs('<mongoConnection>', ['todos']);
+
 
 // Get ToDos
 router.get('/todos', function(req, res, next){
