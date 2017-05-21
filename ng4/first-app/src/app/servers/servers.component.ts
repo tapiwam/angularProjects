@@ -5,20 +5,38 @@ import { Component, OnInit } from '@angular/core';
   // selector: '.app-servers',    // Class
   // selector: '.app-servers',    // Element
   
-  // templateUrl: './servers.component.html',
+  templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css'],
+  
+  /*
   template: `
     <app-server></app-server>
     <app-server></app-server>
     <app-server></app-server>
     <app-server></app-server>
-  `
+  `*/
 })
 export class ServersComponent implements OnInit {
 
-  constructor() { }
+  allowNewServer = false;
+  serverCreationStatus = 'No server was created';
+  serverName = "";
+
+  constructor() { 
+    setTimeout(() => {
+      this.allowNewServer = true;
+    }, 2000)
+  }
 
   ngOnInit() {
   }
 
+  onCreateServer(){
+    this.serverCreationStatus = 'Server was created';
+  }
+
+  onUpdateServerName(event: any){
+    console.log(event.target);
+    this.serverName = (<HTMLInputElement>event.target).value;
+  }
 }
