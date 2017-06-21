@@ -27,5 +27,13 @@ export class AppComponent {
     });
   }
 
+  onChangeFirst(){
+    this.serverElements[0].name = 'Test server changed!';
+  }
+
+  onDestroyFirst(){
+    this.serverElements.splice(0, 1);
+  }
+
   
 }
