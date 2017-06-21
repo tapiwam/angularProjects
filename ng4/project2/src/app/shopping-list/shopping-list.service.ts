@@ -30,4 +30,18 @@ export class ShoppingListService {
         this.ingredientChanged.emit(this.ingredients.slice());
     }
 
+    addIngredients(ings: Ingredient[]) {
+
+        console.log('SL-Service - Adding to shopping list');
+
+        // Method 1
+        // for( let ing of ings ){
+        //  this.addIngredient(ing);   
+        // }
+
+        // Method 2 - Push in 1 go
+        this.ingredients.push(...ings);
+        this.ingredientChanged.emit(this.ingredients.slice())    
+    }
+
 }
