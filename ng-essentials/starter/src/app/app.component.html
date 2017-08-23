@@ -10,5 +10,8 @@
 
 <hr>
 
-<app-user [name]="'Taps'"></app-user>
+Name: {{ rootname }}
+<br>
+
+<app-user [name]="rootname" (nameChanged)="onNameChanged($event)"></app-user>
 

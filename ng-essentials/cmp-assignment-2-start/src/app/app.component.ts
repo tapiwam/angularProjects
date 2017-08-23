@@ -6,11 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Ng Essentials';
-
-  rootname: String = 'ABC';
-
-  onNameChanged(newName) {
-    this.rootname = newName;
-  }
+  title = 'app';
 }
